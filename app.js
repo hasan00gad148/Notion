@@ -36,7 +36,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: store,
-    cookie: { sameSite: 'lax', maxAge: 1000 * 60 * 5 }
+    cookie: { sameSite: 'lax', maxAge: 1000 * 60 * 60 }
   }))
 
 
@@ -239,8 +239,12 @@ app.post('/login',async function(req, res) {
 });
 //======================================================================
 
-
-
+app.get("/logout", function(req,res){
+req.session.destroy(function(){
+  res.redirect("/home");
+});
+return;
+});
 
 
 
