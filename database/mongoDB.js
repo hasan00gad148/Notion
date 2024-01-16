@@ -4,23 +4,21 @@ dotenv.config();
 
 const mongodb = require('mongodb');
 
+db=null;
 
-async function getdb(){
-    try {
-        const client = await new mongodb.MongoClient(process.env.mongodbURL);
-        const db = await client.db(process.env.dbname);
-        if (!db) throw new Error("Couldn't connect to database")
-        
-        return db
-    } catch (error) {
-        console.error("error getting db", error)
-        return false;
-    }
+async function connectdb(){
+    const client = await new mongodb.MongoClient(process.env.mongodbURL);
+    db = await client.db(process.env.dbname);
+}
 
+function getdb(){
+
+    if (!db) throw new Error("getdb func, Couldn't connect to database")
+    return db
 
 }
 
 
 
 
-module.exports={getdb:getdb, objectId:mongodb.ObjectId,}
+module.exports={connectdb:connectdb, getdb:getdb, objectId:mongodb.ObjectId}

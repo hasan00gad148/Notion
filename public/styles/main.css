@@ -1,0 +1,108 @@
+@font-face {
+    font-family: RubikDoodleTriangles;
+    src: url(/public/styles/fonts/RubikDoodleTriangles-Regular.ttf);
+    font-weight: bold;
+    margin: 0;
+}
+@font-face {
+    font-family: RubikDoodleShadow;
+    src: url(/public/styles/fonts/RubikDoodleShadow-Regular.ttf);
+    font-weight: bold;
+    margin: 0;
+}
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url(/public/styles/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+    font-weight: 400;
+    margin: 0;
+}
+@font-face {
+    font-family: WorkSans;
+    src: url(/public/styles/fonts/WorkSans-VariableFont_wght.ttf);
+    font-weight: 400;
+    margin: 0;
+}
+
+:root{
+   --font-clr:hsl(200, 20%, 10%);
+   --action-clr:hsl(250, 40%, 30%);
+
+   --first-clr:hsl(200, 70%, 90%);
+   --second-clr:hsl(200, 70%, 60%);
+   --third-clr:hsl(200, 60%, 50%);
+   --forth-clr:hsl(200, 75%,75%);
+
+   --second-t-clr:hsla(200, 70%, 60%,0.7);
+   --third-t-clr:hsla(200, 60%, 50%,0.7);
+   --forth-t-clr:hsl(200, 75%,75%,0.7);
+   
+}
+
+*{
+    
+    /* vertical-align: auto; */
+    
+    text-align: center;
+    /* margin: 0 auto; */
+    overflow: hidden;
+    font-family:  SpaceGrotesk ,WorkSans,"Helvetica Neue", "Helvetica", "Arial";
+    font-size: 1.1rem;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: var(--first-clr);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+a{
+    text-decoration: none;
+    color:var(--action-clr);
+    font-weight: 400;
+    padding: 0.2rem;
+}
+a:hover{
+    font-size: 1.15rem;
+    color:var(--third-clr);
+}
+
+#logo a{
+    font-family: RubikDoodleShadow;
+    font-size: 2rem;
+    padding: 0.2rem;
+    text-shadow: 2px 2px 3px var(--action-clr);
+}
+#logo a:hover{
+    text-shadow: 3px 3px 5px var(--font-clr);
+    font-size: 2.1rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--second-clr);
+    padding: 1rem;
+    min-height: 100%;
+}
+nav ul{
+    margin:0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding:0.25rem;
+    gap:1rem;
+}
+
+
+
+.btn{
+    color:var(--first-clr);
+    background-color: var(--action-clr);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+}

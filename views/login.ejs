@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/public/styles/login.css">
+</head>
+<body>
+    <header>
+       <%- include('includes/nav.ejs') %>
+    </header>
+    <main>
+        <h1> LogIn form</h1>
+        <% if (inputdata.massege) { %>
+            <p class="err-massege"> <%=inputdata.massege%></p>
+        <% } %>
+        <form action="/login" method="post">
+
+            <div>
+                <label for="email"> email:</label>
+                <input  id="email" name="email" type="email" required value=<%= inputdata.email %> >
+            </div>
+            <div>
+                <label for="password">password:</label>
+                <input  id="password" name="password" type="password" required value=<%= inputdata.password %> >
+            </div>
+
+            <div>
+               
+                <input type="submit" value="LogIn" class="btn">
+            </div>
+            <input type="hidden" name="_csrf" value=<%= locals.csrfToken %>>
+        </form>
+        
+    </main>
+</body>
+</html>

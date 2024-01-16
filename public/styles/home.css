@@ -1,0 +1,36 @@
+
+.container{
+    margin: 8rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    background-color: var(--forth-t-clr);
+    width: 75%;
+    border-radius: 2rem;
+    box-shadow: 3px 3px 5px  hsla(0, 0%, 0%,0.5);
+}
+.btn{
+    width: 20%;
+
+}
+
+.container *{
+    margin: auto;
+}
+
+.container div{
+    width: 60%;
+}
+
+.container div *{
+    padding: 0.5rem;
+}
+svg{
+    transition: ease-in-out 0.5s;
+}
+svg:hover {
+    transform: rotate(-180deg); /* This will rotate the SVG element by 45 degrees clockwise */
+  }
+

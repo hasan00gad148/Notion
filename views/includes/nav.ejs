@@ -1,0 +1,18 @@
+<nav>
+    <div id="logo">
+        <a href="/home">Notion</a>   
+    </div>
+    <ul>
+
+        <li><a href="/home">home</a></li>
+        <% if (locals.isAuth) { %>
+            <li><a href="/workSpace">workSpace</a></li>
+            <li><a href="/collections">collections</a></li>
+            <li><a href="/logout">logout</a></li>
+        <% } else { %>
+         
+        <li><a href="/login">login</a></li>
+        <li><a href="/signup">signup</a></li>
+        <% } %>
+    </ul>
+</nav>
