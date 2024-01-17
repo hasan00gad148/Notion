@@ -15,8 +15,12 @@
         <% } %>
         <form action="/signup"  method="post">
             <div>
-                <label for="username">username:</label>
-                <input id="username" name="username" type="text" required value=<%= inputdata.username %> >
+                <label for="firstname">firstname:</label>
+                <input id="firstname" name="firstname" type="text" required value=<%= inputdata.firstname %> >
+            </div>
+            <div>
+                <label for="lastname">username:</label>
+                <input id="lastname" name="lastname" type="text" required value=<%= inputdata.lastname %> >
             </div>
             <div>
                 <label for="email">email:</label>

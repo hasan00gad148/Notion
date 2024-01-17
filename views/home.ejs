@@ -22,7 +22,12 @@
             become focused, organized, and calm with Todoist. one of the best task manager and to-do list apps.
             </p>
         </div>
-        <a href="#" id="start-ff-btn" class="btn"> start for free</a>
+        <% if (locals.isAuth) { %>
+            <a href="/workspace" id="start-ff-btn" class="btn"> start for free</a>
+        <% } else { %>
+            <a href="/signup" id="start-ff-btn" class="btn"> start for free</a>
+        <% } %>
+       
     </main>
 </body>
 </html>
