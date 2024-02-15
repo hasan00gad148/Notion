@@ -1,0 +1,70 @@
+main{
+    margin: 8rem auto;
+    width: 75%;
+    background-color: var(--forth-t-clr);
+    padding: 1rem;
+    border-radius: 2rem;
+
+    box-shadow: 3px 3px 5px  hsla(0, 0%, 0%,0.5);
+}
+
+main h1{
+    margin: 2rem auto;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+   
+}
+
+main form{
+    margin: 2rem auto;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:2rem ;
+}
+main form div{
+    text-align: center;
+}
+main form div *{
+display: block;
+margin: 0 auto;
+}
+
+main form input{
+
+    background-color: var(--first-clr);
+    outline: none;
+    border: none;
+    border: 1px solid var(--action-clr);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    text-align: left;
+ 
+}
+main form textarea{
+    width: 75%;
+    background-color: var(--first-clr);
+    border: 1px solid var(--action-clr);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    overflow:visible;
+    resize: none;
+}
+main form label{
+
+    text-align: center;
+    display: block;
+    padding: 0.2rem;
+
+}
+
+.err-massege{
+    background-color: hsla(0, 75%, 70%, 0.7);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}

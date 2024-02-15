@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/public/styles/collection.css">
+    <script src="/public/scripts/collection.js" defer></script>
+</head>
+<body>
+    <header>
+        <%- include('includes/nav.ejs') %>
+
+     </header>
+
+    <main>
+    
+        <h1><%= collection.title %></h1>
+        <time datetime=<%= collection.date.toISOString() %>><%= collection.date.toLocaleDateString('en-UK', {
+            weekday: "short",
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour12:true,
+            
+          }) %>  </time>
+        
+          <p>
+            <%= collection.description %>
+          </p>
+
+          <div>
+            <h2>docs</h2>
+            <section class="search">
+                <a name="add-btn" href="/collections/<%=collection._id %>/add" class="btn">+ new </a>
+                <form action="/collections/<%=collection._id %>/search" method="get">
+                  <input type="submit" value="search">
+                  <input type="search" name="title" id="title" placeholder="enter title" >
+                  <input type="hidden" name="_csrf"value="<%= locals.csrfToken %>">
+                </form>
+            </section>
+            <ul class="doc-list" data-collection_id="<%=collection._id%>">
+                <% if (docs && docs.length>0) { %>
+                    <% docs.forEach(doc => { %>
+                    <li>
+                        <div>
+                       <h2><%=doc.title %></h2>
+                       <time datetime=<%= doc.date.toISOString() %>><%= doc.date.toLocaleString('en-UK',{dateStyle:"medium",timeStyle:"short"})%>  </time>
+                       </div>
+                       <a href="/collections/<%= collection._id %>/docs/<%= doc._id %>" class="btn"> view </a>
+                    </li>
+
+                    <% }) %>
+                <% } else { %>
+                    <p> no docs found</p>
+                <% } %>
+            </ul>
+          </div>
+    </main>       
+     
+</body>
+</html>

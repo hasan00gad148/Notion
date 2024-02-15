@@ -3,6 +3,7 @@
     margin: 8rem auto;
     padding: 2rem;
     display: flex;
+    direction: column;
     flex-direction: column;
     gap: 1.5rem;
     grid-template-columns: 1fr;

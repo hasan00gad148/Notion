@@ -1,0 +1,100 @@
+main{
+    margin: 12rem auto;
+    width: 70%;
+    background-color: var(--forth-t-clr);
+    padding: 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 5px 5px 5px  hsla(0, 0%, 0%,0.5);
+}
+
+time{
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 100;
+}
+
+p{
+    width: 60ch;
+    margin: 2rem auto;
+}
+main div{
+    padding: 1rem;
+    width: 70%;
+    margin: 1rem auto;
+}
+.doc-list{
+    background-color: var(--first-clr) ;
+    padding: 2rem;
+    border-top-left-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
+    height: 12rem;
+    overflow-y:auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+.doc-list li{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 0.75rem ;
+    padding: 2rem;
+    background-color: var(--forth-clr);
+    border-radius: 1rem;
+}
+.doc-list li *{
+    margin-block: 0;
+    text-align: left;
+}
+
+
+.search{
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4rem
+}
+.search *{
+    margin: 0 ;
+}
+
+
+.search form input{
+    margin: 0;
+    background-color: var(--first-clr);
+    outline: none;
+    border: none;
+    border: 1px solid var(--action-clr);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    text-align: left;
+
+
+}
+
+ ::-webkit-scrollbar {
+    width: 0.5rem;
+
+  }
+ ::-webkit-scrollbar-track {
+background: var(--first-clr);
+border-radius: 1rem;
+}
+ ::-webkit-scrollbar-thumb {
+background: var(--forth-clr);
+border-radius: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+

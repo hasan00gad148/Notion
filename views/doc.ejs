@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('includes/head.ejs') %>   
+    <link rel="stylesheet" href="/public/styles/doc.css">
+    <script src="/public/scripts/doc.js" defer></script>
+    <%- include('includes/md.ejs') %>
+</head>
+<body>
+    <header>
+       <%- include('includes/nav.ejs') %>
+    </header>
+    <main>
+        <div class="container">
+
+            <h1><%= doc.title %> </h1>
+            <time datetime=<%= collection.date.toISOString() %>><%= collection.date.toLocaleString('en-UK', {
+                weekday: "short",
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour12:false,
+              }) %>
+            </time>
+            <h2>collection: <%= collection.title %> </h2>
+            <md-block>
+                <%= doc.content %>
+            </md-block>
+
+            <div class="edit-del">
+                <a href="/collections/<%= collection._id %>/docs/<%= doc._id %>/del" class="btn del-btn">delete</a>
+                <a href="/collections/<%= collection._id %>/docs/<%= doc._id %>/edit" class="btn">edit</a>
+            </div>
+
+        </div>
+        
+    </main>
+    <aside class="del-confirm-aside" data-collection_id="<%= collection._id %>">
+        <div class="del-confirm-div">
+          <h1> Are you sure you want to delete this collection?</h1>
+          <div>
+            <a id="yes-btn" href="" class="btn" data-csrfToken="<%= locals.csrfToken %>"> yes</a>
+            <a id="no-btn" href="#" class="btn" >no</a>
+          </div>
+        </div>
+    </aside>
+</body>
+</html>

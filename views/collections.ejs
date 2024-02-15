@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/public/styles/collections.css">
+    <script src="/public/scripts/collections.js" defer></script>
+  </head>
+  <body>
+    <header><%- include('includes/nav.ejs') %></header>
+
+    <main>
+      <h1>collections</h1>
+
+      <section class="search">
+        <a name="add-btn" href="/collections/add" class="btn">+ new </a>
+        <form action="/collections/search" method="get">
+          <input type="submit" value="search">
+          <input type="search" name="title" id="title" placeholder="enter title" >
+          <input type="hidden" name="_csrf"value="<%= locals.csrfToken %>">
+        </form>
+      </section>
+
+
+      <section class="collections">
+        <ul class="collections-ul">
+            <% if (collections && collections.length>0) { %>
+              <% collections.forEach(collection => { %>
+                <%- include('includes/collection.ejs',{collection:collection}) %>
+              <% }) %>
+            <% } else { %>
+             <p> no collections found</p>
+              <% } %>
+        </ul>
+      </section>
+    </main>
+    <aside class="del-confirm-aside">
+      <div class="del-confirm-div">
+        <h1> Are you sure you want to delete this collection?</h1>
+        <div>
+          <a id="yes-btn" href="" class="btn" data-csrfToken="<%= locals.csrfToken %>"> yes</a>
+          <a id="no-btn" href="#" class="btn" >no</a>
+        </div>
+      </div>
+    </aside>
+  </body>
+</html>

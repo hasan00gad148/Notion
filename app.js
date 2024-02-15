@@ -5,6 +5,8 @@ const express = require("express");
 
 const mongodb = require('./database/mongoDB');
 const authRouter = require("./routes/authRouter")
+const collectionsRouter = require("./routes/collectionsRouter")
+const docsRouter = require("./routes/docsRouter")
 const appConfig = require("./utils/expressAppConfig");
 
 
@@ -23,7 +25,7 @@ app.use(function(req, res, next) {
      
         res.locals.isAuth = true;   
         res.locals.username = req.session.user.firstname+" "+req.session.user.lastname;
-        res.locals.id = req.session.user.id;
+        res.locals.id = req.session.user._id;
     }
    
     next();
@@ -31,8 +33,15 @@ app.use(function(req, res, next) {
 
 
 
-app.use(authRouter.router)
+app.use(authRouter)
+app.use(function(req, res, next) {
+    if (!req.session.isAuth)
+        return res.render("401");
+    next()
+})
 
+app.use(collectionsRouter);
+app.use(docsRouter);
 
 
 

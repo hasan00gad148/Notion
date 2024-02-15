@@ -42,4 +42,4 @@ app.get("/logout", authController.logout);
 
 
 
-module.exports = {router: app};
+module.exports =  app;

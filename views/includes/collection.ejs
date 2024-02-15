@@ -1,0 +1,18 @@
+<li class="collection" data-id = <%= collection._id %>>
+    <h1 title="<%=(collection.title)%>"><%= collection.title %></h1>
+    <time datetime=<%= collection.date.toISOString() %>><%= collection.date.toLocaleDateString('en-UK', {
+      weekday: "short",
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour12:true,
+      
+    }) %>
+    </time>
+    <p title="<%= collection.description %>"><%= collection.description %></p>
+    <div>
+      <a name="view-btn" href=<%="/collections/"+ collection._id %> class="btn">view</a>
+      <a name="edit-btn" href=<%="/collections/"+ collection._id+"/edit" %>  class="btn">edit</a>
+      <a name="del-btn" href=<%="/collections/"+ collection._id+"/del" %>  class="btn del-btn">del</a>
+    </div>
+  </li>

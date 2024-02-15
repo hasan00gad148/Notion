@@ -11,7 +11,9 @@
     </header>
     <main class="container">
         <% if (locals.isAuth) { %>
-            <p> welcome <%=  locals.username %></p>
+            <h1> welcome <%=  locals.username %></h1>
+        <% } else { %>
+            <h1> welcome </h1>
         <% } %>
         
         

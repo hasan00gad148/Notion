@@ -1,3 +1,6 @@
+body,html{
+    overflow-y: scroll;
+}
 @font-face {
     font-family: RubikDoodleTriangles;
     src: url(/public/styles/fonts/RubikDoodleTriangles-Regular.ttf);
@@ -39,22 +42,20 @@
 }
 
 *{
-    
-    /* vertical-align: auto; */
-    
-    text-align: center;
-    /* margin: 0 auto; */
-    overflow: hidden;
     font-family:  SpaceGrotesk ,WorkSans,"Helvetica Neue", "Helvetica", "Arial";
-    font-size: 1.1rem;
+    text-align: center;
+    overflow: hidden;
     transition: all 0.2s;
     box-sizing: border-box;
+    font-size: 1.1rem;  
 }
-body {
+body,html {
     margin: 0;
     background-color: var(--first-clr);
     min-height: 100vh;
     min-width: 100vw;
+    font-size: 1.1rem;    
+  
 }
 a{
     text-decoration: none;
@@ -63,7 +64,6 @@ a{
     padding: 0.2rem;
 }
 a:hover{
-    font-size: 1.15rem;
     color:var(--third-clr);
 }
 
@@ -77,6 +77,11 @@ a:hover{
     text-shadow: 3px 3px 5px var(--font-clr);
     font-size: 2.1rem;
 }
+header{
+    position: fixed;
+    width: 100vw;
+}
+
 
 nav{
     display: flex;
@@ -105,4 +110,8 @@ nav ul{
     padding: 0.5rem;
     border-radius: 0.5rem;
     margin: 1rem auto;
+}
+.btn:hover{
+    background-color: var(--action-clr);
+    font-size: inherit;
 }
