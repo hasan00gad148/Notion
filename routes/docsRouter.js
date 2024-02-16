@@ -15,8 +15,8 @@ app.get("/collections/:collection_id/add", docsController.getAddDocs);
 app.post("/collections/:collection_id/add", docsController.postAddDocs);
 app.get("/collections/:collection_id/docs/:doc_id",docsController.getDocs)
 app.get("/collections/:collection_id/docs/:doc_id/del",docsController.delDoc)
-app.get("/collections/:collection_id/edit", docsController.getEditDocs);
-app.post("/collections/:collection_id/edit", docsController.postEditDocs);
+app.get("/collections/:collection_id/docs/:doc_id/edit", docsController.getEditDocs);
+app.post("/collections/:collection_id/docs/:doc_id/edit", docsController.postEditDocs);
 
 
 

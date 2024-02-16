@@ -69,6 +69,10 @@ class Collection {
 
         let result = await mongodb.getdb().collection('doc_collections')
         .deleteOne({_id:this.data._id,user_id:this.data.user_id})
+
+        await mongodb.getdb().collection('docs') 
+        .deleteMany({user_id:this.data.user_id,collection_id: this.data._id});
+
         return result.deletedCount == 1
     }
 

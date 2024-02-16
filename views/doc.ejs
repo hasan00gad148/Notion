@@ -22,7 +22,7 @@
                 hour12:false,
               }) %>
             </time>
-            <h2>collection: <%= collection.title %> </h2>
+            <h2>collection: <a href="/collections/<%= collection._id %>/"><%= collection.title %></a>  </h2>
             <md-block>
                 <%= doc.content %>
             </md-block>

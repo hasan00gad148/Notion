@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('includes/head.ejs') %>   
+    <link rel="stylesheet" href="/public/styles/AddDoc.css">
+    <%- include('includes/md.ejs') %>
+</head>
+<body>
+    <header>
+       <%- include('includes/nav.ejs') %>
+    </header>
+    <main>
+        <h1> Update Doc form</h1>
+        <% if (inputdata.massege) { %>
+            <p class="err-massege"> <%=inputdata.massege%></p>
+        <% } %>
+        <form action="/collections/<%=collection_id %>/docs/<%= doc_id %>/edit"  method="post">
+            <div>
+                <label for="title">title:</label>
+                <input id="title" name="title" type="text" required value=<%= inputdata.title %> >
+            </div>
+            <div>
+                <label for="content">content:<a style="cursor: pointer;" id="preview-btn" >preview</a></label> 
+                <textarea id="content" name="content" cols="50" rows="25" required><%= inputdata.content %> </textarea>
+                <md-block id="previewContent" name="previewContent"></md-block>
+            </div>
+            
+            <div>
+                <input type="submit" value="Update Doc" class="btn">
+            </div>
+            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        </form>
+        
+    </main>
+</body>
+</html>
